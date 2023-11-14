@@ -1,0 +1,32 @@
+{
+    "name": "Go",
+    "dockerComposeFile": "../compose.yml",
+    "service": "app",
+    "forwardPorts": [
+        8080
+    ],
+    "workspaceFolder": "/go/src",
+    "shutdownAction": "none",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "ms-azuretools.vscode-docker",
+                "GitHub.copilot",
+                "GitHub.copilot-chat"
+            ],
+            "settings": {
+                "go.useLanguageServer": true,
+                "go.lintTool": "golangci-lint",
+                "go.lintFlags": [
+                    "--config=${workspaceFolder}/.golangci.yaml",
+                    "--fast"
+                ],
+                "editor.formatOnSave": true,
+                "gopls": {
+                    "formatting.gofumpt": true
+                }
+            }
+        }
+    }
+}
